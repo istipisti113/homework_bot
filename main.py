@@ -58,7 +58,7 @@ async def on_message(message):
                 case "h":
                     await check_for_homework()
                 case "help" :
-                    await message.channel.send(f"All command must start with '!' \nThe list of available commands: \n  !ping -- you will be granted the permission to view the channel the homework notification is being sent to\n  !remove -- removes you from that channel\n  !házi 'month' 'date' 'the actual homework' -- adds a new homework to the list.\n  !h -- makes a search for homework at that moment. Other than that there will be an automated one evety day at 7pm. \n\nThis will be available on my github at: ")
+                    await message.channel.send(f"All command must start with '!' \nThe list of available commands: \n  !ping -- you will be granted the permission to view the channel the homework notification is being sent to\n  !remove -- removes you from that channel\n  !házi 'month' 'date' 'the actual homework' -- adds a new homework to the list.\n  !h -- makes a search for homework at that moment. Other than that there will be an automated one evety day at 7pm. \n\nThis will be available on my github at: www.github.com/istipisti113/homework_bot ")
                 case _:
                     print(message.content.split()[0][1::])
         else:
@@ -114,4 +114,6 @@ async def check_for_homework():
 checker_thread = threading.Thread(target=sleeper)
 checker_thread.start()
 
-bot.run("MTIzOTI0ODc1NDg3MjQyMjQzMA.G2wvA0.PLHcpS_OqlTH2XPgHmg_wQCz5aHDgCXgt53ZC0")
+key = open("../key.txt").readlines()[0].strip()
+#print(f"key: \n\n\n\n\ni   asdfasfa sd {key}")
+bot.run(key)
